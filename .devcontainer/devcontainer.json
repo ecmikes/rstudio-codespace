@@ -1,0 +1,7 @@
+{
+  "name": "RStudio Codespace",
+  "image": "rocker/rstudio:latest",
+  "forwardPorts": [8787],
+  "postCreateCommand": "sudo passwd -d rstudio",
+  "remoteUser": "rstudio"
+}
