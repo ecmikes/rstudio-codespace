@@ -1,7 +1,16 @@
 {
   "name": "RStudio Codespace",
-  "image": "rocker/rstudio:latest",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "overrideCommand": false,
   "forwardPorts": [8787],
-  "postCreateCommand": "sudo passwd -d rstudio",
+  "portsAttributes": {
+    "8787": {
+      "label": "RStudio",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "sudo passwd -d rstudio || true",
   "remoteUser": "rstudio"
 }
